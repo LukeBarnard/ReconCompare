@@ -22,9 +22,9 @@ Data
 ----
 All data is provided as csv or txt files, and is provided in the data subdirectory. The data used in this project were obtained from the following published articles and national data repositories:
 
-*   10Be Cosmogenic Isotope derived solar activity reconstructions: Supplementary material to McCrakcen and Beer 2015, Solar Physics doi:10.1007/s11207-015-0777-x 
-*   Sunspot derived solar activity reconstruction: Supplementary material to Owens et al. 2016 JGR doi:10.1002/2016JA022529
-*   Geomagnetically derived solar activity reconstructions: Supplementary material to Owens et al. 2016 JGR doi:10.1002/2016JA022529
+*   10Be Cosmogenic Isotope derived solar activity reconstructions: Supplementary material to McCrakcen and Beer 2015, Solar Physics https://dx.doi.org/10.1007/s11207-015-0777-x 
+*   Sunspot derived solar activity reconstruction: Supplementary material to Owens et al. 2016 JGR https://dx.doi.org/10.1002/2016JA022529
+*   Geomagnetically derived solar activity reconstructions: Supplementary material to Owens et al. 2016 JGR https://dx.doi.org/10.1002/2016JA022529
 *   Daily Sunspot Count: Downloaded from WDC-SILSO, Royal Observatory of Belgium, Brussels, at http://www.sidc.be/silso/datafiles
 *   aa geomagnetic index: Downloaded from ISGI at http://isgi.unistra.fr/indices_aa.php., and these data are provided under a CC-BY-NC lisence.
 
