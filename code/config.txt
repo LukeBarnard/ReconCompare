@@ -1,0 +1,10 @@
+root,C:\Users\yq904481\PycharmProjects\ReconCompare
+data,data
+pcr_recon,data\11207_2015_777_MOESM1_ESM.xls
+geo_recon,data\jgra52714-sup-0003-Datas_Sets_SI-S01.txt
+ssn_recon,data\jgra52714-sup-0002-Supportings_Informations_SI-S02.txt
+ssn_count_data,data\SN_d_tot_V2.0.txt
+aa_data,data\aa-index_1868-Jan-01_2015-Dec-31.txt
+gle_data,data\gle_list.txt
+code,code
+figs,figures
