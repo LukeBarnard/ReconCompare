@@ -1,3 +1,2 @@
 #Track everything except .pyc and figure files.
 *.pyc
-/figures/*
