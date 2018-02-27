@@ -64,6 +64,8 @@ def configure_matplotlib():
     mpl.rc('mathtext', default='regular')
     mpl.rc('legend', numpoints=1, fontsize=14, labelspacing=0.1, handletextpad=0.3, frameon=False, framealpha=0.0,
            columnspacing=0.3, scatterpoints=1, handlelength=1)
+    mpl.rc('savefig', dpi=300)
+
     return
 
 
