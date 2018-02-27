@@ -4,7 +4,7 @@ ReconCompare
 Introduction
 ------------
 
-The scripts provided in this project provide the code and data that generated the results reported in our article "What can the annual 10Be solar activity reconstructions tell us about historic space weather", accepted for publication in Journal of Space Weather and Space Climate.
+The scripts in this project provide the code and data that generated the results reported in our article "What can the annual 10Be solar activity reconstructions tell us about historic space weather", accepted for publication in Journal of Space Weather and Space Climate.
 
 In this work we compare reconstructions of the heliospheric magnetic field derived from cosmogenic isotopes, sunspot records, and geomagnetic variability, along with known records of large space weather events. We interpret these results as evidence that there are small systematic differences between the cosmogenic isotope reconstructions in comparison to the geomagnetic and sunspot reconstructions. The nature of these reconstructions implies they may be due to the cosmic ray inversion procedure, and perhaps due to a bias resulting from large space weather events. For further details on the scientific background and results of this project, please see our article.
 
@@ -20,7 +20,7 @@ After downloading the full project (code and data files), open config.txt (in th
 
 Data
 ----
-All data is provided as csv or txt files, and is provided in the data subdirectory. The data used in this project were obtained from the following published articles and national data repositories:
+All data is provided as csv or txt files, and is provided in the data subdirectory. The data used in this project were obtained from the following published articles and data repositories:
 
 *   10Be Cosmogenic Isotope derived solar activity reconstructions: Supplementary material to McCrakcen and Beer 2015, Solar Physics https://dx.doi.org/10.1007/s11207-015-0777-x 
 *   Sunspot derived solar activity reconstruction: Supplementary material to Owens et al. 2016 JGR https://dx.doi.org/10.1002/2016JA022529
