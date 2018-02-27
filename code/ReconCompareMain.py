@@ -6,7 +6,7 @@ def main():
 
     # Setup default plotting environment
     rcp.configure_matplotlib()
-    # Plots of the reconstruction and reconsrtuction differences time series.
+    # Plots of the reconstruction and reconstruction differences time series.
     rca.s01_reconstruction_time_series()
     # Analysis of the raw reconstructions and reconstruction differences with solar cycle phase and Hale cycle phase.
     rca.s02_reconstruction_phase_series_raw()

@@ -1,2 +1,3 @@
-#Track everything except .pyc and figure files.
+#Track everything except .pyc, figure files and the .ignore directory
 *.pyc
+.idea/

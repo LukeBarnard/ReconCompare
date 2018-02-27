@@ -213,7 +213,7 @@ def calc_solar_cycle_phase(time):
         idt[i] = np.argwhere(start_times <= t)[-1]
 
     sc_num = sc[idt]
-    sc_phase = 2 * np.pi * (time - start_times[idt]) / cycle_length[idt]
+    sc_phase = 2.0 * np.pi * (time - start_times[idt]) / cycle_length[idt]
     # Get whether rising or falling part of cycle
     sc_state = np.ones(time.shape)
     sc_state[time > max_times[idt]] = -1
@@ -232,7 +232,7 @@ def calc_solar_cycle_phase(time):
         idt[i] = np.argwhere(hale_start <= t)[-1]
 
     hale_num = hale[idt]
-    hale_phase = 2 * np.pi * (time - hale_start[idt]) / hale_length[idt]
+    hale_phase = 2.0 * np.pi * (time - hale_start[idt]) / hale_length[idt]
 
     return sc_num, sc_phase, sc_state, hale_num, hale_phase
 

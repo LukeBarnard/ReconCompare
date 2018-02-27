@@ -13,12 +13,12 @@ def s01_reconstruction_time_series():
     """
     pcr1, pcr2, ssn, geo = rcp.load_all_data(get_all=False)
 
-    # Print some rudimentary stats about the 4 reconstructions.
+    # print(some rudimentary stats about the 4 reconstructions.
     for data, key in zip([pcr1, pcr2, geo, ssn], ['pcr1', 'pcr2', 'geo', 'ssn']):
 
-        print "******************************"
-        print "{0:} - mean: {1:3.2f}".format(key, data['hmf'].mean())
-        print "{0:} - median: {1:3.2f}".format(key, data['hmf'].median())
+        print("******************************")
+        print("{0:} - mean: {1:3.2f}".format(key, data['hmf'].mean()))
+        print("{0:} - median: {1:3.2f}".format(key, data['hmf'].median()))
 
     # Find years in PCR1 difference from PCR2
     id_sep = ~np.isclose(pcr1['hmf'], pcr2['hmf'], atol=3e-1)
@@ -139,16 +139,16 @@ def s01_reconstruction_time_series():
         ax[0].plot(data_span, pdf, '-', color=cols[col], label='$P(F_{g' + key[1] + '}$)', zorder=1)
         ax[0].plot(geo[key][id_sep], y_rand, 'o', color=cols[col], mec=cols[col], zorder=2)
 
-        # Print out some stats of the distribution
-        print "*******************************"
-        print "GEO"
-        print key
-        print "Median: {}".format(geo[key].median())
+        # print(out some stats of the distribution
+        print("*******************************")
+        print("GEO")
+        print(key)
+        print("Median: {}".format(geo[key].median()))
         data_mode = data_span[np.argmax(pdf)]
-        print "Mode: {}".format(data_mode)
-        print "Skew: {}".format(geo[key].skew())
-        print "p>0: {}".format(kde.integrate_box_1d(data_mode, 1.5))
-        print "p<0: {}".format(kde.integrate_box_1d(-1.5, data_mode))
+        print("Mode: {}".format(data_mode))
+        print("Skew: {}".format(geo[key].skew()))
+        print("p>0: {}".format(kde.integrate_box_1d(data_mode, 1.5)))
+        print("p<0: {}".format(kde.integrate_box_1d(-1.5, data_mode)))
  
         # KDE estimate the SSN distribution.
         kde = sps.gaussian_kde(ssn[key])
@@ -156,16 +156,16 @@ def s01_reconstruction_time_series():
         ax[1].plot(data_span, pdf, '-', color=cols[col], label='$P(F_{r' + key[1] + '}$)', zorder=1)
         ax[1].plot(ssn[key][id_sep], y_rand, 'o', color=cols[col], mec=cols[col], zorder=2)
 
-        # Print out some stats of the distribution
-        print "*******************************"
-        print "SSN"
-        print key
-        print "Median: {}".format(ssn[key].median())
+        # print(out some stats of the distribution
+        print("*******************************")
+        print("SSN")
+        print(key)
+        print("Median: {}".format(ssn[key].median()))
         data_mode = data_span[np.argmax(pdf)]
-        print "Mode: {}".format(data_mode)
-        print "Skew: {}".format(ssn[key].skew())
-        print "p>0: {}".format(kde.integrate_box_1d(data_mode, 1.5))
-        print "p<0: {}".format(kde.integrate_box_1d(-1.5, data_mode))
+        print("Mode: {}".format(data_mode))
+        print("Skew: {}".format(ssn[key].skew()))
+        print("p>0: {}".format(kde.integrate_box_1d(data_mode, 1.5)))
+        print("p<0: {}".format(kde.integrate_box_1d(-1.5, data_mode)))
 
     ax[1].yaxis.tick_right()
     ax[1].yaxis.set_label_position('right')
@@ -293,7 +293,7 @@ def s03_reconstruction_phase_series_avg(n_phase_bins=10):
         n_phase_bins = int(n_phase_bins)
 
     # Calculate average of reconstruction parameters and differences over solar cycle phase
-    phase_bw = 2*np.pi / n_phase_bins
+    phase_bw = 2.0*np.pi / n_phase_bins
     phase_bins = np.arange(0, 2*np.pi + phase_bw, phase_bw)
 
     for ii, key in enumerate(['sc_phase', 'hale_phase']):
@@ -402,7 +402,7 @@ def s04_reconstruction_phase_series_avg_polarity_split(n_phase_bins=10):
         n_phase_bins = int(n_phase_bins)
 
     # Calculate average of reconstruction parameters and differences over solar cycle phase
-    phase_bw = 2*np.pi / n_phase_bins
+    phase_bw = 2.0*np.pi / n_phase_bins
     phase_bins = np.arange(0, 2*np.pi + phase_bw, phase_bw)
 
     for key in ['sc_phase', 'hale_phase']:
@@ -593,7 +593,7 @@ def s05_aa_storm_and_gle_time_series():
         ax[0].legend(loc=1)
 
         n_phase_bins = 10
-        phase_bw = 2 * np.pi / n_phase_bins
+        phase_bw = 2.0 * np.pi / n_phase_bins
         phase_bins = np.arange(0, 2 * np.pi + phase_bw, phase_bw)
         phase_mid = np.mean([phase_bins[:-1], phase_bins[1:]], axis=0)
         aa_count = np.zeros(len(phase_bins)-1)
@@ -614,7 +614,7 @@ def s05_aa_storm_and_gle_time_series():
         ax[1].legend(loc=1)
 
         n_phase_bins = 10
-        phase_bw = 2 * np.pi / n_phase_bins
+        phase_bw = 2.0 * np.pi / n_phase_bins
         phase_bins = np.arange(0, 2 * np.pi + phase_bw, phase_bw)
         phase_mid = np.mean([phase_bins[:-1], phase_bins[1:]], axis=0)
         aa_count = np.zeros(len(phase_bins) - 1)
@@ -666,11 +666,11 @@ def s06_bootstrap_residual_distributions_with_gle():
     id_gle = num_of_gle != 0
     id_nogle = ~id_gle
 
-    print "**********************************************"
-    print "Residual distributions conditonal on GLE years"
-    print "Total number of years: {:02d}".format(len(id_gle))
-    print "Years with GLE: {:02d}".format(sum(id_gle))
-    print "Years without GLE: {:02d}".format(sum(id_nogle))
+    print("**********************************************")
+    print("Residual distributions conditonal on GLE years")
+    print("Total number of years: {:02d}".format(len(id_gle)))
+    print("Years with GLE: {:02d}".format(sum(id_gle)))
+    print("Years without GLE: {:02d}".format(sum(id_nogle)))
 
     # Now do CDF plots without fitting the data.
     fig, ax, cols = rcp.setup_plot(nrows=2, ncols=2, figsize=(10, 10))
@@ -750,11 +750,11 @@ def s07_bootstrap_residual_distributions_with_ggms():
         ggms = aa_storms[aa_storms[metric] > aa_storms[metric].quantile(0.9)]
         ggms.set_index(np.arange(0, len(ggms)), inplace=True)
 
-        # Print out storm stats
+        # print(out storm stats
         if metric == "peak":
-            print "**********************************************"
-            print "Total number of storms: {:02d}".format(len(aa_storms))
-            print "Total number of large storms: {:02d}".format(len(ggms))
+            print("**********************************************")
+            print("Total number of storms: {:02d}".format(len(aa_storms)))
+            print("Total number of large storms: {:02d}".format(len(ggms)))
 
         # Get boolean arrays of years with and without gles
         year_of_ggms = np.array([g.year for g in ggms['time']])
@@ -764,12 +764,12 @@ def s07_bootstrap_residual_distributions_with_ggms():
         id_ggms = num_of_ggms != 0
         id_noggms = ~id_ggms
 
-        print "**********************************************"
-        print metric.upper()
-        print "Residual distributions conditonal on GGMS years"
-        print "Total number of years: {:02d}".format(len(id_ggms))
-        print "Years with GGMS: {:02d}".format(sum(id_ggms))
-        print "Years without GGMS: {:02d}".format(sum(id_noggms))
+        print("**********************************************")
+        print(metric.upper())
+        print("Residual distributions conditonal on GGMS years")
+        print("Total number of years: {:02d}".format(len(id_ggms)))
+        print("Years with GGMS: {:02d}".format(sum(id_ggms)))
+        print("Years without GGMS: {:02d}".format(sum(id_noggms)))
 
         # Now do CDF plots without fitting the data.
         fig, ax, cols = rcp.setup_plot(nrows=2, ncols=2, figsize=(10, 10))
@@ -801,7 +801,7 @@ def s07_bootstrap_residual_distributions_with_ggms():
 
             # Do KS test on the distributions.
             k_stat, p_val = sps.ks_2samp(data['r1'][id_noggms].values, data['r1'][id_ggms].values)
-            print "{} - D, p_val: {:3.2f}, {:5.4f}".format(lab.upper(), k_stat, p_val)
+            print("{} - D, p_val: {:3.2f}, {:5.4f}".format(lab.upper(), k_stat, p_val))
 
         for a, lab in zip(ax.ravel(), ["A)", "B)", "C)", "D)"]):
             # Set lims all equal
@@ -881,13 +881,13 @@ def s08_bootstrap_residual_distributions_with_ggms_polarity_split():
             id_ggms = num_of_ggms != 0
             id_noggms = ~id_ggms
 
-            print "**********************************************"
-            print metric.upper()
-            print phase.upper()
-            print "Residual distributions conditonal on GGMS years"
-            print "Total number of years: {:02d}".format(len(id_ggms))
-            print "Years with GGMS: {:02d}".format(sum(id_ggms))
-            print "Years without GGMS: {:02d}".format(sum(id_noggms))
+            print("**********************************************")
+            print(metric.upper())
+            print(phase.upper())
+            print("Residual distributions conditonal on GGMS years")
+            print("Total number of years: {:02d}".format(len(id_ggms)))
+            print("Years with GGMS: {:02d}".format(sum(id_ggms)))
+            print("Years without GGMS: {:02d}".format(sum(id_noggms)))
 
             # Now do CDF plots without fitting the data.
             fig, ax, cols = rcp.setup_plot(nrows=2, ncols=2, figsize=(10, 10))
@@ -934,7 +934,7 @@ def s08_bootstrap_residual_distributions_with_ggms_polarity_split():
 
                 # Do KS test on the distributions.
                 k_stat, p_val = sps.ks_2samp(data['r1'][id_noggms].values, data['r1'][id_ggms].values)
-                print "{} - D, p_val: {:3.2f}, {:5.4f}".format(lab.upper(), k_stat, p_val)
+                print("{} - D, p_val: {:3.2f}, {:5.4f}".format(lab.upper(), k_stat, p_val))
 
             for a, lab in zip(ax.ravel(), ["A)", "B)", "C)", "D)"]):
                 # Set lims all equal
