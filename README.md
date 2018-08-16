@@ -4,7 +4,7 @@ ReconCompare
 Introduction
 ------------
 
-The scripts in this project provide the code and data that generated the results reported in our article "What can the annual 10Be solar activity reconstructions tell us about historic space weather", accepted for publication in Journal of Space Weather and Space Climate.
+The scripts in this project provide the code and data that generated the results reported in our article "What can the annual 10Be solar activity reconstructions tell us about historic space weather", published in Journal of Space Weather and Space Climate, available at https://doi.org/10.1051/swsc/2018014
 
 In this work we compare reconstructions of the heliospheric magnetic field derived from cosmogenic isotopes, sunspot records, and geomagnetic variability, along with known records of large space weather events. We interpret these results as evidence that there are small systematic differences between the cosmogenic isotope reconstructions in comparison to the geomagnetic and sunspot reconstructions. The nature of these reconstructions implies they may be due to the cosmic ray inversion procedure, and perhaps due to a bias resulting from large space weather events. For further details on the scientific background and results of this project, please see our article.
 
